@@ -9,21 +9,20 @@ Una página web educativa, interactiva y visualmente atractiva para aprender y c
 - Animaciones suaves y transiciones
 - Diseño minimalista pero atractivo
 - Totalmente responsive para móviles, tablets y desktop
+- **Optimizada para presentaciones de 5 minutos**
 
-🎯 **Contenido Completo**
+🎯 **Contenido Esencial**
 - Introducción a Scrum
 - 3 Roles principales (Product Owner, Scrum Master, Equipo de Desarrollo)
 - 4 Eventos de Scrum (Planning, Daily Standup, Review, Retrospectiva)
-- 3 Artefactos principales (Product Backlog, Sprint Backlog, Incremento)
-- Flujo completo visual de un Sprint
+- Caso Real: Proyecto E-commerce con 4 Sprints
 
 🔧 **Funcionalidades Especiales**
 - Navegación por pestañas e iconos
 - Detalles expandibles para cada rol
-- Información detallada sobre eventos de Scrum
-- Diagramas visuales del flujo de trabajo
+- Información esencial sobre eventos de Scrum
 - Búsqueda en la página (Ctrl+F)
-- Atajos de teclado (Alt+1 a Alt+6)
+- Atajos de teclado (Alt+1 a Alt+5)
 - Botones de compartir en redes sociales
 - Modo oscuro (opcional)
 - Impresión amigable (Ctrl+P)
@@ -71,9 +70,7 @@ python -m SimpleHTTPServer 8000
 | **Alt + 2** | Ir a ¿Qué es Scrum? |
 | **Alt + 3** | Ir a Roles |
 | **Alt + 4** | Ir a Eventos |
-| **Alt + 5** | Ir a Artefactos |
-| **Alt + 6** | Ir a Flujo del Sprint |
-| **Alt + 7** | Ir a Caso Real |
+| **Alt + 5** | Ir a Caso Real |
 | **Ctrl + F** | Buscar en la página |
 | **Ctrl + P** | Imprimir la página |
 
@@ -104,18 +101,7 @@ Barra de navegación pegajosa con acceso rápido a todas las secciones.
 - **Sprint Retrospectiva**: Reflexión y mejora
 - Información de duración, participantes y objetivos
 
-### 6. **Artefactos de Scrum**
-- **Product Backlog**: Lista de requerimientos
-- **Sprint Backlog**: Trabajo del sprint actual
-- **Incremento**: Producto completado
-- **Definition of Done**: Criterios de aceptación
-
-### 7. **Flujo Completo del Sprint**
-- Timeline visual de un sprint de 2 semanas
-- Diagrama que muestra la secuencia de eventos
-- Representación visual del ciclo iterativo
-
-### 7. **Caso de Estudio Real: Plataforma E-commerce**
+### 6. **Caso de Estudio Real: Plataforma E-commerce**
 - **Equipo Scrum**: Perfiles reales (Product Owner, Scrum Master, Desarrolladores, Diseñador, QA)
 - **Product Backlog**: Items priorizados del proyecto (8 features reales)
 - **4 Sprints de 2 Semanas**: 

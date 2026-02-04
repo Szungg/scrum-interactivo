@@ -200,9 +200,7 @@ document.addEventListener('keydown', function(e) {
     // ALT + 2 = ¿Qué es?
     // ALT + 3 = Roles
     // ALT + 4 = Eventos
-    // ALT + 5 = Artefactos
-    // ALT + 6 = Flujo
-    // ALT + 7 = Caso Real
+    // ALT + 5 = Caso Real
     
     if (e.altKey) {
         const sectionMap = {
@@ -210,9 +208,7 @@ document.addEventListener('keydown', function(e) {
             '2': 'que-es',
             '3': 'roles',
             '4': 'eventos',
-            '5': 'artefactos',
-            '6': 'flujo',
-            '7': 'caso-estudio'
+            '5': 'caso-estudio'
         };
         
         if (sectionMap[e.key]) {
@@ -360,95 +356,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// ========== COMPARTIR EN REDES SOCIALES ========== 
-const addShareButtons = () => {
-    const shareButtons = document.createElement('div');
-    shareButtons.className = 'share-buttons';
-    shareButtons.innerHTML = `
-        <button onclick="compartirEnTwitter()" title="Compartir en Twitter">
-            <span>𝕏</span> Twitter
-        </button>
-        <button onclick="compartirEnFacebook()" title="Compartir en Facebook">
-            <span>f</span> Facebook
-        </button>
-        <button onclick="copiarEnlace()" title="Copiar enlace">
-            <span>🔗</span> Copiar
-        </button>
-    `;
-    
-    const style = document.createElement('style');
-    style.textContent = `
-        .share-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-            z-index: 99;
-        }
-
-        .share-buttons button {
-            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .share-buttons button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .share-buttons button span {
-            margin-right: 5px;
-            font-weight: bold;
-        }
-
-        @media (max-width: 480px) {
-            .share-buttons {
-                flex-direction: row;
-                gap: 5px;
-                right: 10px;
-                bottom: 10px;
-            }
-
-            .share-buttons button {
-                padding: 8px 10px;
-                font-size: 0.8rem;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    document.body.appendChild(shareButtons);
-};
-
-addShareButtons();
-
-// Funciones de compartir
-function compartirEnTwitter() {
-    const url = window.location.href;
-    const text = "Aprende Scrum de forma interactiva y visual 🚀";
-    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
-}
-
-function compartirEnFacebook() {
-    const url = window.location.href;
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-}
-
-function copiarEnlace() {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-        alert('¡Enlace copiado al portapapeles!');
-    });
-}
-
 // ========== PRINT FRIENDLY ========== 
 document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && e.key === 'p') {
@@ -459,4 +366,4 @@ document.addEventListener('keydown', function(e) {
 
 // ========== VERIFICAR QUE TODO ESTÁ CARGADO ========== 
 console.log('✅ Página Scrum Interactiva cargada correctamente');
-console.log('💡 Consejos: Usa ALT+1 a ALT+7 para navegar, Ctrl+F para buscar, Ctrl+P para imprimir');
+console.log('💡 Consejos: Usa ALT+1 a ALT+5 para navegar, Ctrl+F para buscar, Ctrl+P para imprimir');
