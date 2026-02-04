@@ -70,7 +70,8 @@ python -m SimpleHTTPServer 8000
 | **Alt + 2** | Ir a ¿Qué es Scrum? |
 | **Alt + 3** | Ir a Roles |
 | **Alt + 4** | Ir a Eventos |
-| **Alt + 5** | Ir a Caso Real |
+| **Alt + 5** | Ir a Presentación |
+| **Alt + 6** | Ir a Caso Real |
 | **Ctrl + F** | Buscar en la página |
 | **Ctrl + P** | Imprimir la página |
 
@@ -101,7 +102,12 @@ Barra de navegación pegajosa con acceso rápido a todas las secciones.
 - **Sprint Retrospectiva**: Reflexión y mejora
 - Información de duración, participantes y objetivos
 
-### 6. **Caso de Estudio Real: Plataforma E-commerce**
+### 6. **Presentación Visual**
+- Presentación embebida desde Canva
+- Complemento visual a la guía interactiva
+- Diseño profesional y atractivo
+
+### 7. **Caso de Estudio Real: Plataforma E-commerce**
 - **Equipo Scrum**: Perfiles reales (Product Owner, Scrum Master, Desarrolladores, Diseñador, QA)
 - **Product Backlog**: Items priorizados del proyecto (8 features reales)
 - **4 Sprints de 2 Semanas**: 

@@ -200,7 +200,8 @@ document.addEventListener('keydown', function(e) {
     // ALT + 2 = ¿Qué es?
     // ALT + 3 = Roles
     // ALT + 4 = Eventos
-    // ALT + 5 = Caso Real
+    // ALT + 5 = Presentación
+    // ALT + 6 = Caso Real
     
     if (e.altKey) {
         const sectionMap = {
@@ -208,7 +209,8 @@ document.addEventListener('keydown', function(e) {
             '2': 'que-es',
             '3': 'roles',
             '4': 'eventos',
-            '5': 'caso-estudio'
+            '5': 'presentacion',
+            '6': 'caso-estudio'
         };
         
         if (sectionMap[e.key]) {
@@ -366,4 +368,4 @@ document.addEventListener('keydown', function(e) {
 
 // ========== VERIFICAR QUE TODO ESTÁ CARGADO ========== 
 console.log('✅ Página Scrum Interactiva cargada correctamente');
-console.log('💡 Consejos: Usa ALT+1 a ALT+5 para navegar, Ctrl+F para buscar, Ctrl+P para imprimir');
+console.log('💡 Consejos: Usa ALT+1 a ALT+6 para navegar, Ctrl+F para buscar, Ctrl+P para imprimir');
