@@ -6,7 +6,7 @@
 }
 
 .role-card {
-    background: white;
+    background: var(--surface-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,7 @@
     font-size: 3rem;
     text-align: center;
     padding: 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(160deg, var(--primary-color) 0%, var(--mid-color) 55%, var(--secondary-color) 100%);
     color: white;
 }
 
@@ -60,6 +60,10 @@
     transform: scale(1.05);
 }
 
+.btn-details.is-open {
+    background: var(--primary-color);
+}
+
 .role-details {
     padding: 0;
     max-height: 0;
@@ -87,7 +91,7 @@
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
-    color: #555;
+    color: var(--text-muted);
 }
 
 .role-details li::before {
@@ -100,11 +104,11 @@
 
 .role-note {
     padding: 1rem;
-    background: #FFF9E6;
+    background: var(--surface-muted);
     border-left: 4px solid var(--warning-color);
     border-radius: 4px;
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
     font-style: italic;
 }
 

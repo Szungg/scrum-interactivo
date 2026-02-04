@@ -1,7 +1,7 @@
 /* FOOTER COMPONENT STYLES */
 
 .footer {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(160deg, var(--primary-color) 0%, var(--mid-color) 55%, var(--secondary-color) 100%);
     color: white;
     padding: 30px 0;
     margin-top: 50px;

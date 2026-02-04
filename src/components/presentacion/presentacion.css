@@ -1,49 +1,34 @@
-/* Presentación Component Styles */
 .presentation-container {
     position: relative;
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
     overflow: hidden;
-    border: solid black 0.3rem;
-    border-radius: 3rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 8px solid var(--text-color);
+    border-radius: 2.5rem;
+    aspect-ratio: 16 / 9;
 }
 
 .presentation-container iframe {
-    width: 100%;
-    height: 70vh;
-    min-height: 24rem;
-    max-height: 50rem;
+    width: 100% !important;
+    height: 100% !important;
     display: block;
-    clip-path: inset(2.5% 0);
-    margin: -6% 0;
+    border: none;
+    transform: scale(1.015);
+    transform-origin: center;
 }
 
 @media (max-width: 768px) {
     .presentation-container {
-        border-width: 0.25rem;
+        width: 80%;
+        border: 3px solid var(--text-color);
         border-radius: 2rem;
-    }
-
-    .presentation-container iframe {
-        height: 55vh;
-        min-height: 20rem;
-        max-height: 40rem;
-        clip-path: inset(2% 0);
-        margin: -5% 0;
     }
 }
 
 @media (max-width: 480px) {
     .presentation-container {
-        border-width: 0.2rem;
+        width: 90%;
+        border: 3px solid var(--text-color);
         border-radius: 1.5rem;
-    }
-
-    .presentation-container iframe {
-        height: 45vh;
-        min-height: 16rem;
-        max-height: 32rem;
-        clip-path: inset(1.5% 0);
-        margin: -4% 0;
     }
 }

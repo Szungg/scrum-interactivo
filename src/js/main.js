@@ -75,6 +75,9 @@ const ComponentLoader = {
 function initializeAllInteractivity() {
     // Navegación
     setupNavigation();
+
+    // Tema claro/oscuro
+    setupThemeToggle();
     
     // Detalles de roles
     initializeRoleDetails();
@@ -123,6 +126,31 @@ function setupNavigation() {
     });
 }
 
+// ========== TEMA CLARO/OSCURO ==========
+function setupThemeToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    const initialTheme = storedTheme || (prefersDark ? 'dark' : 'light');
+
+    const applyTheme = (theme) => {
+        document.body.classList.toggle('theme-dark', theme === 'dark');
+        localStorage.setItem('theme', theme);
+        toggle.setAttribute('aria-pressed', theme === 'dark');
+        toggle.setAttribute('title', theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+        toggle.textContent = theme === 'dark' ? '🌙 Oscuro' : '☀️ Claro';
+    };
+
+    applyTheme(initialTheme);
+
+    toggle.addEventListener('click', () => {
+        const nextTheme = document.body.classList.contains('theme-dark') ? 'light' : 'dark';
+        applyTheme(nextTheme);
+    });
+}
+
 // ========== DETALLES DE ROLES ========== 
 function initializeRoleDetails() {
     document.querySelectorAll('.btn-details').forEach(button => {
@@ -131,14 +159,13 @@ function initializeRoleDetails() {
             
             // Alternar clase visible
             details.classList.toggle('visible');
+            this.classList.toggle('is-open');
             
             // Cambiar texto del botón
             if (details.classList.contains('visible')) {
                 this.textContent = 'Ocultar Detalles';
-                this.style.background = '#FF6B6B';
             } else {
                 this.textContent = 'Ver Detalles';
-                this.style.background = '#4ECDC4';
             }
         });
     });

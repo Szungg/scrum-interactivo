@@ -7,15 +7,47 @@
 }
 
 :root {
-    --primary-color: #FF6B6B;
-    --secondary-color: #4ECDC4;
-    --accent-color: #95E1D3;
-    --dark-color: #2C3E50;
-    --light-color: #ECF0F1;
-    --text-color: #333;
-    --border-color: #DDD;
+    --primary-color: #1F4E79;
+    --secondary-color: #32BFA5;
+    --mid-color: #2F6FB3;
+    --accent-color: #5DADE2;
+    --dark-color: #1C2833;
+    --light-color: #F4F6F7;
+    --text-color: #2C3E50;
+    --text-muted: #6B7280;
+    --bg-color: #F9F9F9;
+    --surface-color: #FFFFFF;
+    --surface-muted: #F3F6FA;
+    --primary-tint: rgba(31, 78, 121, 0.1);
+    --secondary-tint: rgba(50, 191, 165, 0.1);
+    --accent-tint: rgba(93, 173, 226, 0.1);
+    --border-color: #E5E7EB;
     --success-color: #27AE60;
     --warning-color: #F39C12;
+}
+
+body.theme-dark {
+    --primary-color: #334155;
+    --secondary-color: #1E3A3A;
+    --mid-color: #3B4558;
+    --accent-color: #3E4A5C;
+    --dark-color: #E5E7EB;
+    --light-color: #1A1A1A;
+    --text-color: #FFFFFF;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --bg-color: #1A1A1A;
+    --surface-color: #1E1E1E;
+    --surface-muted: #252525;
+    --primary-tint: rgba(51, 65, 85, 0.15);
+    --secondary-tint: rgba(30, 58, 58, 0.15);
+    --accent-tint: rgba(62, 74, 92, 0.15);
+    --border-color: #333333;
+}
+
+body.theme-dark h2,
+body.theme-dark h3 {
+    color: var(--text-color) !important;
 }
 
 html {
@@ -26,7 +58,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-color);
     line-height: 1.6;
-    background-color: #F9F9F9;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -38,6 +73,7 @@ body {
 /* ========== MAIN LAYOUT ========== */
 main {
     padding: 3rem 0;
+    flex: 1 0 auto;
 }
 
 .section {
@@ -69,7 +105,7 @@ main {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(100deg, var(--primary-color) 0%, var(--mid-color) 55%, var(--secondary-color) 100%);
     border-radius: 2px;
 }
 
