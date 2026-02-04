@@ -224,6 +224,9 @@ Proyecto educativo libre para uso personal y académico.
 ## Autor
 
 **Gerónimo Molero**  
-[Tu Email](gemordz@gmail.com) | [GitHub](https://github.com/GeroniMolero)
+[Tu Email][contactEmail] | [GitHub](https://github.com/GeroniMolero)
 
 ---
+
+
+[contactEmail]: gemordz@gmail.com
