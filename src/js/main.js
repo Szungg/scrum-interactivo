@@ -33,6 +33,7 @@ const ComponentLoader = {
         // Cargar todos los componentes desde sus carpetas
         await this.loadMultiple([
             { name: 'navbar', path: 'src/components/navbar/navbar.html' },
+            { name: 'theme-toggle', path: 'src/components/theme-toggle/theme-toggle.html' },
             { name: 'inicio', path: 'src/components/inicio/inicio.html' },
             { name: 'que-es', path: 'src/components/que-es/que-es.html' },
             { name: 'roles', path: 'src/components/roles/roles.html' },
@@ -46,6 +47,12 @@ const ComponentLoader = {
         const navContainer = document.getElementById('nav-container');
         if (navContainer) {
             navContainer.innerHTML = this.render('navbar');
+        }
+
+        // Inyectar theme toggle en navbar
+        const toggleContainer = document.getElementById('theme-toggle-container');
+        if (toggleContainer) {
+            toggleContainer.innerHTML = this.render('theme-toggle');
         }
         
         // Inyectar componentes principales
@@ -130,6 +137,8 @@ function setupNavigation() {
 function setupThemeToggle() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
+    const srLabel = toggle.querySelector('.theme-toggle__sr');
+    const icon = toggle.querySelector('.theme-toggle__icon');
 
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const storedTheme = localStorage.getItem('theme');
@@ -140,7 +149,13 @@ function setupThemeToggle() {
         localStorage.setItem('theme', theme);
         toggle.setAttribute('aria-pressed', theme === 'dark');
         toggle.setAttribute('title', theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-        toggle.textContent = theme === 'dark' ? '🌙 Oscuro' : '☀️ Claro';
+        toggle.dataset.theme = theme;
+        if (icon) {
+            icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+        if (srLabel) {
+            srLabel.textContent = theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+        }
     };
 
     applyTheme(initialTheme);
