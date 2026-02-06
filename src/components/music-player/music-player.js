@@ -28,11 +28,6 @@ function setupMusicSidebar() {
             image: 'src/public/images/Aventure%20-%20A%20Beautiful%20Garden%20(freetouse.com).jpg'
         },
         {
-            title: 'Eminem-Mockingbird',
-            src: 'src/public/music/Eminem-Mockingbird.mp3',
-            image: 'src/public/images/ajolotemusic.png'
-        },
-        {
             title: 'Inspiring Cinematic Music - Tunetank',
             src: 'src/public/music/Inspiring%20Cinematic%20Music%20-%20Tunetank.mp3',
             image: 'src/public/images/Inspiring%20Cinematic%20Music%20-%20Tunetank.jpg'
