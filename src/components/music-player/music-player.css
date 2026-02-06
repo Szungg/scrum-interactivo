@@ -275,11 +275,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-image: var(--fondo-reproductor);
+    background-size: contain;
     gap: 0.9rem;
     padding: 1.2rem;
     border-radius: 1.5rem;
     border: 2px solid var(--border-color);
-    background: linear-gradient(135deg, var(--surface-muted), var(--surface-color));
+    /* background: linear-gradient(135deg, var(--surface-muted), var(--surface-color)); */
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 

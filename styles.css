@@ -24,6 +24,7 @@
     --border-color: #E5E7EB;
     --success-color: #27AE60;
     --warning-color: #F39C12;
+    --fondo-reproductor: url(../../public/images/fondoreproductorclaro.jpg);
 }
 
 body.theme-dark {
@@ -43,6 +44,7 @@ body.theme-dark {
     --secondary-tint: rgba(30, 58, 58, 0.15);
     --accent-tint: rgba(62, 74, 92, 0.15);
     --border-color: #333333;
+    --fondo-reproductor: url(../../public/images/fondoreproductoroscuro.jpg);
 }
 
 body.theme-dark h2,
@@ -62,6 +64,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+#nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .container {
