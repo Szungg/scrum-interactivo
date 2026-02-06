@@ -32,6 +32,8 @@ Una aplicación web educativa, moderna y visualmente atractiva para aprender la 
 - Atajos de teclado (Alt+1 a Alt+6)
 - Animaciones al hacer scroll (Intersection Observer)
 - Persistencia del tema elegido (localStorage)
+- Reproductor de musica con sidebar y lista editable
+- Seleccion de musica local sin subir archivos
 
 ## Estructura del Proyecto
 
@@ -184,6 +186,7 @@ ComponentLoader.init()
 npm run dev      # Servidor de desarrollo
 npm run build    # Compilar para producción
 npm run preview  # Vista previa de build
+npm run music:sync # Actualiza la lista de musica local del proyecto
 ```
 
 ## Mejores Prácticas Implementadas
@@ -225,5 +228,3 @@ Proyecto educativo libre para uso personal y académico.
 
 **Gerónimo Molero**  
 Email: `gemordz@gmail.com` | [GitHub](https://github.com/GeroniMolero)
-
----

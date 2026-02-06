@@ -40,6 +40,7 @@ const ComponentLoader = {
             { name: 'eventos', path: 'src/components/eventos/eventos.html' },
             { name: 'presentacion', path: 'src/components/presentacion/presentacion.html' },
             { name: 'caso-estudio', path: 'src/components/caso-estudio/caso-estudio.html' },
+            { name: 'music-player', path: 'src/components/music-player/music-player.html' },
             { name: 'footer', path: 'src/components/footer/footer.html' }
         ]);
         
@@ -53,6 +54,12 @@ const ComponentLoader = {
         const toggleContainer = document.getElementById('theme-toggle-container');
         if (toggleContainer) {
             toggleContainer.innerHTML = this.render('theme-toggle');
+        }
+
+        // Inyectar music player
+        const musicContainer = document.getElementById('music-player-container');
+        if (musicContainer) {
+            musicContainer.innerHTML = this.render('music-player');
         }
         
         // Inyectar componentes principales
@@ -100,6 +107,9 @@ function initializeAllInteractivity() {
     
     // Navegación por teclado
     setupKeyboardNavigation();
+
+    // Sidebar de musica
+    setupMusicSidebar();
 }
 
 // ========== NAVEGACIÓN ========== 
@@ -291,6 +301,7 @@ function setupKeyboardNavigation() {
         }
     });
 }
+
 
 // ========== INICIAR APLICACIÓN ==========
 document.addEventListener('DOMContentLoaded', async () => {

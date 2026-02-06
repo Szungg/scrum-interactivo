@@ -1,0 +1,43 @@
+<!-- MUSIC PLAYER SIDEBAR COMPONENT -->
+<aside class="music-sidebar" aria-label="Reproductor de musica">
+    <button id="music-toggle" class="music-sidebar__toggle" type="button" aria-pressed="false">▶</button>
+    <div class="music-sidebar__content">
+        <p class="music-sidebar__title">Musica de fondo</p>
+        <div id="reproductor">           
+            <div id="music-now" class="music-sidebar__now">Sin reproduccion</div>
+            <div class="music-sidebar__art" aria-hidden="true">
+                <img id="music-art" alt="">
+            </div>
+            <div class="music-sidebar__controls">
+                <button id="music-prev" class="music-sidebar__button" type="button">◁◁</button>
+                <button id="music-play" class="music-sidebar__button" type="button" aria-pressed="false">II</button>
+                <button id="music-next" class="music-sidebar__button" type="button">▷▷</button>
+                <button id="music-mute" class="music-sidebar__button" type="button" aria-pressed="false">Mute</button>
+            </div>
+            <div class="music-sidebar__progress">
+                <input id="music-progress" type="range" min="0" max="1000" value="0" aria-label="Progreso de reproduccion">
+                <div class="music-sidebar__time">
+                    <span id="music-time-current">0:00</span>
+                    <span id="music-time-total">0:00</span>
+                </div>
+            </div>
+            <label class="music-sidebar__volume" for="music-volume">
+                <span>Volumen</span>
+                <input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.8">
+            </label>
+        </div>
+        <label class="music-sidebar__search" for="music-search">
+            <span class="music-sidebar__search-head">
+                <span>Buscar</span>
+                <button id="music-local" class="music-sidebar__local-btn" type="button">Elegir</button>
+            </span>
+            <input id="music-files" class="music-sidebar__local-input" type="file" accept="audio/*" multiple>
+            <input id="music-search" type="search" placeholder="Filtrar canciones" autocomplete="off">
+        </label>
+        <div id="music-list" class="music-sidebar__list" role="list"></div>
+        <audio id="music-player" preload="metadata">
+            <source src="src/public/music/Aventure%20-%20A%20Beautiful%20Garden%20(freetouse.com).mp3" type="audio/mpeg">
+            Tu navegador no soporta el reproductor de audio.
+        </audio>
+    </div>
+</aside>
