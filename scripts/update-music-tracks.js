@@ -12,7 +12,7 @@ const musicPlayerPath = path.join(projectRoot, 'src', 'components', 'music-playe
 
 const allowedExtensions = new Set(['.mp3', '.wav', '.ogg', '.m4a']);
 const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
-const placeholderImage = 'src/public/images/placeholder.jpg';
+const placeholderImage = 'src/public/images/ajolotemusic.png';
 
 const escapeSingleQuotes = (value) => value.replace(/'/g, "\\'");
 

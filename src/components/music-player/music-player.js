@@ -34,7 +34,7 @@ function setupMusicSidebar() {
         }
     ]
     // END AUTO-GENERATED MUSIC TRACKS
-    const EMPTY_IMAGE = 'src/public/images/placeholder.jpg';
+    const EMPTY_IMAGE = 'src/public/images/ajolotemusic.png';
 
     let currentIndex = 0;
     let localObjectUrls = [];
