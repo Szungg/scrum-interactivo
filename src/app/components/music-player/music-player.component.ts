@@ -18,18 +18,18 @@ export class MusicPlayerComponent implements AfterViewInit, OnDestroy {
   @ViewChild('audioPlayer') private readonly audioPlayer?: ElementRef<HTMLAudioElement>;
 
   readonly storageKey = 'musicSidebarCollapsed';
-  readonly emptyImage = '/assets/images/ajolotemusic.png';
+  readonly emptyImage = 'assets/images/ajolotemusic.png';
 
   tracks: Track[] = [
     {
       title: 'Aventure - A Beautiful Garden (freetouse.com)',
-      src: '/assets/music/Aventure%20-%20A%20Beautiful%20Garden%20(freetouse.com).mp3',
-      image: '/assets/images/Aventure%20-%20A%20Beautiful%20Garden%20(freetouse.com).jpg'
+      src: 'assets/music/Aventure%20-%20A%20Beautiful%20Garden%20(freetouse.com).mp3',
+      image: 'assets/images/Aventure%20-%20A%20Beautiful%20Garden%20(freetouse.com).jpg'
     },
     {
       title: 'Inspiring Cinematic Music - Tunetank',
-      src: '/assets/music/Inspiring%20Cinematic%20Music%20-%20Tunetank.mp3',
-      image: '/assets/images/Inspiring%20Cinematic%20Music%20-%20Tunetank.jpg'
+      src: 'assets/music/Inspiring%20Cinematic%20Music%20-%20Tunetank.mp3',
+      image: 'assets/images/Inspiring%20Cinematic%20Music%20-%20Tunetank.jpg'
     }
   ];
 
@@ -98,6 +98,12 @@ export class MusicPlayerComponent implements AfterViewInit, OnDestroy {
 
   onSearch(value: string): void {
     this.filterText = value;
+  }
+
+  onSearchInput(event: Event): void {
+    const target = event.target as HTMLInputElement | null;
+    if (!target) return;
+    this.onSearch(target.value);
   }
 
   onPickLocal(files: FileList | null): void {
@@ -170,8 +176,20 @@ export class MusicPlayerComponent implements AfterViewInit, OnDestroy {
     player.currentTime = ratio * player.duration;
   }
 
+  onProgressInput(event: Event): void {
+    const target = event.target as HTMLInputElement | null;
+    if (!target) return;
+    this.onProgressChange(target.value);
+  }
+
   onVolumeChange(value: string): void {
     this.applyVolume(Number(value));
+  }
+
+  onVolumeInput(event: Event): void {
+    const target = event.target as HTMLInputElement | null;
+    if (!target) return;
+    this.onVolumeChange(target.value);
   }
 
   onLoadedMetadata(): void {
