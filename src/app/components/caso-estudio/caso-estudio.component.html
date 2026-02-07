@@ -1,0 +1,371 @@
+<section id="caso-estudio" class="section">
+  <div class="container">
+    <h2>Caso de Estudio Real: Plataforma de E-commerce</h2>
+
+    <div class="case-study-intro">
+      <p><strong>Escenario:</strong> Una startup quiere desarrollar una plataforma de compra y venta de libros online. Necesita lanzar su MVP (Producto Mínimo Viable) en 3 meses usando Scrum.</p>
+    </div>
+
+    <div class="case-tabs">
+      <button class="case-tab-btn" type="button" [class.active]="activeTab === 'equipo'" (click)="setTab('equipo')">Equipo</button>
+      <button class="case-tab-btn" type="button" [class.active]="activeTab === 'backlog'" (click)="setTab('backlog')">Product Backlog</button>
+      <button class="case-tab-btn" type="button" [class.active]="activeTab === 'sprints'" (click)="setTab('sprints')">Sprints</button>
+      <button class="case-tab-btn" type="button" [class.active]="activeTab === 'resultados'" (click)="setTab('resultados')">Resultados</button>
+    </div>
+
+    <!-- TAB 1: EQUIPO -->
+    <div class="case-tab-content" [class.active]="activeTab === 'equipo'">
+      <h3>👥 El Equipo Scrum</h3>
+      <div class="team-grid">
+        <div class="team-member" appRevealOnScroll>
+          <div class="team-icon">👔</div>
+          <h4>María García - Product Owner</h4>
+          <p class="role-title">Propietaria de la startup</p>
+          <ul class="team-duties">
+            <li>Define la visión del producto</li>
+            <li>Prioriza features (catálogo, carrito, pago)</li>
+            <li>Habla con clientes y proveedores</li>
+            <li>Acepta o rechaza el trabajo completado</li>
+          </ul>
+        </div>
+
+        <div class="team-member" appRevealOnScroll>
+          <div class="team-icon">🎯</div>
+          <h4>Carlos López - Scrum Master</h4>
+          <p class="role-title">Coach y facilitador</p>
+          <ul class="team-duties">
+            <li>Organiza reuniones diarias (15 min)</li>
+            <li>Resuelve impedimentos del equipo</li>
+            <li>La app se cae: busca solución rápida</li>
+            <li>Facilita la retrospectiva</li>
+          </ul>
+        </div>
+
+        <div class="team-member" appRevealOnScroll>
+          <div class="team-icon">👨‍💻</div>
+          <h4>Ana Martínez - Desarrolladora Backend</h4>
+          <p class="role-title">Ingeniera de software</p>
+          <ul class="team-duties">
+            <li>Crea APIs y lógica del servidor</li>
+            <li>Gestiona base de datos</li>
+            <li>Integración con proveedores de pago</li>
+            <li>Tests unitarios y de integración</li>
+          </ul>
+        </div>
+
+        <div class="team-member" appRevealOnScroll>
+          <div class="team-icon">👨‍💻</div>
+          <h4>Juan Rodríguez - Desarrollador Frontend</h4>
+          <p class="role-title">Ingeniero UI/Frontend</p>
+          <ul class="team-duties">
+            <li>Interfaz de usuario responsiva</li>
+            <li>Experiencia del usuario optimizada</li>
+            <li>Integración con APIs backend</li>
+            <li>Tests de usabilidad</li>
+          </ul>
+        </div>
+
+        <div class="team-member" appRevealOnScroll>
+          <div class="team-icon">🎨</div>
+          <h4>Laura Sánchez - Diseñadora</h4>
+          <p class="role-title">UX/UI Designer</p>
+          <ul class="team-duties">
+            <li>Diseño visual y experiencia</li>
+            <li>Prototipos y wireframes</li>
+            <li>Revisión de usabilidad</li>
+            <li>Guía de estilos consistente</li>
+          </ul>
+        </div>
+
+        <div class="team-member" appRevealOnScroll>
+          <div class="team-icon">🧪</div>
+          <h4>Roberto Pérez - QA/Tester</h4>
+          <p class="role-title">Aseguramiento de calidad</p>
+          <ul class="team-duties">
+            <li>Testing manual y automático</li>
+            <li>Detección de bugs</li>
+            <li>Validación de requisitos</li>
+            <li>Reportes de calidad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: PRODUCT BACKLOG -->
+    <div class="case-tab-content" [class.active]="activeTab === 'backlog'">
+      <h3>📋 Product Backlog (Priorizado)</h3>
+      <div class="backlog-list">
+        <div class="backlog-item priority-1">
+          <div class="backlog-priority">P1</div>
+          <div class="backlog-detail">
+            <h4>Catálogo de libros con búsqueda</h4>
+            <p>Los usuarios pueden ver y buscar libros por título, autor, categoría</p>
+            <span class="story-points">13 puntos</span>
+          </div>
+        </div>
+
+        <div class="backlog-item priority-1">
+          <div class="backlog-priority">P1</div>
+          <div class="backlog-detail">
+            <h4>Carrito de compra funcional</h4>
+            <p>Agregar/quitar libros del carrito, ver total, cantidades</p>
+            <span class="story-points">8 puntos</span>
+          </div>
+        </div>
+
+        <div class="backlog-item priority-1">
+          <div class="backlog-priority">P1</div>
+          <div class="backlog-detail">
+            <h4>Integración con pasarela de pago (Stripe)</h4>
+            <p>Procesamiento seguro de pagos con tarjeta de crédito</p>
+            <span class="story-points">21 puntos</span>
+          </div>
+        </div>
+
+        <div class="backlog-item priority-2">
+          <div class="backlog-priority">P2</div>
+          <div class="backlog-detail">
+            <h4>Autenticación de usuarios (Login/Registro)</h4>
+            <p>Crear cuenta, login seguro, recuperar contraseña</p>
+            <span class="story-points">13 puntos</span>
+          </div>
+        </div>
+
+        <div class="backlog-item priority-2">
+          <div class="backlog-priority">P2</div>
+          <div class="backlog-detail">
+            <h4>Historial de pedidos</h4>
+            <p>Usuarios ven sus compras anteriores, estado de envío</p>
+            <span class="story-points">8 puntos</span>
+          </div>
+        </div>
+
+        <div class="backlog-item priority-2">
+          <div class="backlog-priority">P2</div>
+          <div class="backlog-detail">
+            <h4>Sistema de reseñas y ratings</h4>
+            <p>Usuarios califican libros y dejan comentarios</p>
+            <span class="story-points">13 puntos</span>
+          </div>
+        </div>
+
+        <div class="backlog-item priority-3">
+          <div class="backlog-priority">P3</div>
+          <div class="backlog-detail">
+            <h4>Wishlist / Libros favoritos</h4>
+            <p>Guardar libros para comprar después</p>
+            <span class="story-points">5 puntos</span>
+          </div>
+        </div>
+
+        <div class="backlog-item priority-3">
+          <div class="backlog-priority">P3</div>
+          <div class="backlog-detail">
+            <h4>Recomendaciones personalizadas</h4>
+            <p>Sugerir libros según historial de compra</p>
+            <span class="story-points">21 puntos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: SPRINTS -->
+    <div class="case-tab-content" [class.active]="activeTab === 'sprints'">
+      <h3>🏃 Ejecución en Sprints de 2 Semanas</h3>
+
+      <div class="sprint-cards">
+        <div class="sprint-card" appRevealOnScroll>
+          <div class="sprint-header">
+            <h4>Sprint 1: Catálogo y Carrito Básico</h4>
+            <span class="sprint-dates">Semanas 1-2</span>
+          </div>
+          <div class="sprint-body">
+            <div class="sprint-section">
+              <h5>🎯 Objetivo del Sprint</h5>
+              <p>Tener un MVP con catálogo de libros y carrito de compra funcional</p>
+            </div>
+            <div class="sprint-section">
+              <h5>📌 Items del Sprint Backlog</h5>
+              <ul>
+                <li>✓ Diseño de UI (13 pts) - Laura</li>
+                <li>✓ API REST básica de productos (8 pts) - Ana</li>
+                <li>✓ Página principal y catálogo (13 pts) - Juan</li>
+                <li>✓ Carrito de compra (8 pts) - Juan</li>
+              </ul>
+              <p class="total-points"><strong>Total: 42 puntos de historia</strong></p>
+            </div>
+            <div class="sprint-section">
+              <h5>📊 Resultado Real</h5>
+              <p>✅ Completado: 34 puntos (81%)</p>
+              <p class="note">Nota: El carrito quedó para el siguiente sprint por un problema con la integración de estilos</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sprint-card" appRevealOnScroll>
+          <div class="sprint-header">
+            <h4>Sprint 2: Carrito + Pago</h4>
+            <span class="sprint-dates">Semanas 3-4</span>
+          </div>
+          <div class="sprint-body">
+            <div class="sprint-section">
+              <h5>🎯 Objetivo del Sprint</h5>
+              <p>Completar carrito y agregar procesamiento de pagos seguro</p>
+            </div>
+            <div class="sprint-section">
+              <h5>📌 Items del Sprint Backlog</h5>
+              <ul>
+                <li>✓ Carrito finalizado (8 pts) - Juan</li>
+                <li>✓ Integración Stripe (21 pts) - Ana</li>
+                <li>✓ Login básico (13 pts) - Ana + Juan</li>
+                <li>✓ Testing y QA (5 pts) - Roberto</li>
+              </ul>
+              <p class="total-points"><strong>Total: 47 puntos de historia</strong></p>
+            </div>
+            <div class="sprint-section">
+              <h5>📊 Resultado Real</h5>
+              <p>✅ Completado: 47 puntos (100%)</p>
+              <p class="note">Sprint exitoso. El equipo aprendió de Sprint 1 y fue más realista en estimaciones</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sprint-card" appRevealOnScroll>
+          <div class="sprint-header">
+            <h4>Sprint 3: Perfil y Características Avanzadas</h4>
+            <span class="sprint-dates">Semanas 5-6</span>
+          </div>
+          <div class="sprint-body">
+            <div class="sprint-section">
+              <h5>🎯 Objetivo del Sprint</h5>
+              <p>Agregar perfil de usuario, historial de pedidos y reseñas</p>
+            </div>
+            <div class="sprint-section">
+              <h5>📌 Items del Sprint Backlog</h5>
+              <ul>
+                <li>✓ Perfil de usuario (8 pts) - Juan + Ana</li>
+                <li>✓ Historial de pedidos (8 pts) - Ana</li>
+                <li>✓ Sistema de reseñas (13 pts) - Juan + Ana</li>
+                <li>✓ Email de confirmación (5 pts) - Ana</li>
+              </ul>
+              <p class="total-points"><strong>Total: 34 puntos de historia</strong></p>
+            </div>
+            <div class="sprint-section">
+              <h5>📊 Resultado Real</h5>
+              <p>✅ Completado: 34 puntos (100%)</p>
+              <p class="note">Velocidad estable. El equipo mantiene ritmo consistente</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sprint-card" appRevealOnScroll>
+          <div class="sprint-header">
+            <h4>Sprint 4: Optimización y Lanzamiento</h4>
+            <span class="sprint-dates">Semanas 7-8</span>
+          </div>
+          <div class="sprint-body">
+            <div class="sprint-section">
+              <h5>🎯 Objetivo del Sprint</h5>
+              <p>Optimizar rendimiento, bugs finales y preparar lanzamiento público</p>
+            </div>
+            <div class="sprint-section">
+              <h5>📌 Items del Sprint Backlog</h5>
+              <ul>
+                <li>✓ Optimización de velocidad (8 pts) - Ana</li>
+                <li>✓ Testing de seguridad (13 pts) - Roberto</li>
+                <li>✓ Wishlist básico (5 pts) - Juan</li>
+                <li>✓ Documentación y deployment (8 pts) - Ana</li>
+              </ul>
+              <p class="total-points"><strong>Total: 34 puntos de historia</strong></p>
+            </div>
+            <div class="sprint-section">
+              <h5>📊 Resultado Real</h5>
+              <p>✅ Completado: 34 puntos (100%)</p>
+              <p class="success">🎉 ¡Lanzamiento exitoso! Plataforma en vivo con usuarios reales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: RESULTADOS -->
+    <div class="case-tab-content" [class.active]="activeTab === 'resultados'">
+      <h3>🎯 Resultados Obtenidos</h3>
+
+      <div class="results-grid">
+        <div class="result-card success" appRevealOnScroll>
+          <div class="result-icon">⏱️</div>
+          <h4>Tiempo de Lanzamiento</h4>
+          <p class="result-metric">8 semanas</p>
+          <p class="result-detail">Lanzamiento MVP en tiempo establecido (vs. 12 semanas estimadas inicialmente)</p>
+        </div>
+
+        <div class="result-card success" appRevealOnScroll>
+          <div class="result-icon">💰</div>
+          <h4>Velocidad Predecible</h4>
+          <p class="result-metric">~39 pts/sprint</p>
+          <p class="result-detail">Capacidad del equipo clara para planificar futuros sprints</p>
+        </div>
+
+        <div class="result-card success" appRevealOnScroll>
+          <div class="result-icon">🐛</div>
+          <h4>Calidad de Código</h4>
+          <p class="result-metric">95% Tests</p>
+          <p class="result-detail">Cobertura de testing en características críticas (pago, autenticación)</p>
+        </div>
+
+        <div class="result-card success" appRevealOnScroll>
+          <div class="result-icon">👥</div>
+          <h4>Satisfacción del Equipo</h4>
+          <p class="result-metric">4.2/5</p>
+          <p class="result-detail">Equipo motivado y con mejoras identificadas en retrospectivas</p>
+        </div>
+
+        <div class="result-card success" appRevealOnScroll>
+          <div class="result-icon">📈</div>
+          <h4>Satisfacción del Cliente</h4>
+          <p class="result-metric">92% Features</p>
+          <p class="result-detail">Desarrollo de features deseadas gracias a feedback regular</p>
+        </div>
+
+        <div class="result-card success" appRevealOnScroll>
+          <div class="result-icon">🔄</div>
+          <h4>Adaptabilidad</h4>
+          <p class="result-metric">3 cambios</p>
+          <p class="result-detail">Incorporados nuevos requerimientos durante el desarrollo sin salirse del plan</p>
+        </div>
+      </div>
+
+      <div class="lessons-learned">
+        <h4>📚 Lecciones Aprendidas</h4>
+        <div class="lessons-grid">
+          <div class="lesson">
+            <h5>✅ Qué funcionó bien</h5>
+            <ul>
+              <li>Daily standups cortos (15 min) para mantener alineación</li>
+              <li>Sprints de 2 semanas: duración perfecta para feedback rápido</li>
+              <li>Product Owner presente en sprints aceleró decisiones</li>
+              <li>Testing temprano previno bugs en producción</li>
+            </ul>
+          </div>
+          <div class="lesson">
+            <h5>⚠️ Áreas de mejora</h5>
+            <ul>
+              <li>Sprint 1: Subestimaron la integración de diseño</li>
+              <li>Necesitaron más documentación en ciertos puntos</li>
+              <li>Comunicación con proveedores podría ser más temprana</li>
+              <li>Algunas reuniones podían ser más eficientes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="retrospective-box">
+        <h4>💭 Retrospectiva Final</h4>
+        <p><strong>Carlos (Scrum Master):</strong> "Scrum nos permitió adaptar rápidamente cuando surgieron cambios. El feedback constante del PO fue clave."</p>
+        <p><strong>María (Product Owner):</strong> "Ver avance cada 2 semanas me dio seguridad. Pude ajustar prioridades según el feedback del mercado."</p>
+        <p><strong>Ana y Juan (Developers):</strong> "La estructura clara de sprints nos motivó. Sabíamos exactamente qué hacer cada semana."</p>
+      </div>
+    </div>
+  </div>
+</section>

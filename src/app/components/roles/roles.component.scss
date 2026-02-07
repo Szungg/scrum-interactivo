@@ -1,0 +1,119 @@
+/* Roles Component Styles */
+.roles-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.role-card {
+	background: var(--surface-color);
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.role-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.role-icon {
+	font-size: 3rem;
+	text-align: center;
+	padding: 2rem;
+	background: linear-gradient(160deg, var(--primary-color) 0%, var(--mid-color) 55%, var(--secondary-color) 100%);
+	color: white;
+}
+
+.role-card h3 {
+	text-align: center;
+	color: var(--dark-color);
+	padding: 1rem 1rem 0;
+	font-size: 1.3rem;
+}
+
+.role-subtitle {
+	text-align: center;
+	color: var(--secondary-color);
+	font-size: 0.9rem;
+	padding: 0 1rem;
+	font-weight: 500;
+}
+
+.btn-details {
+	width: 90%;
+	margin: 1rem auto;
+	display: block;
+	padding: 0.8rem;
+	background: var(--secondary-color);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+	background: var(--primary-color);
+	transform: scale(1.05);
+}
+
+.btn-details.is-open {
+	background: var(--primary-color);
+}
+
+.role-details {
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease;
+}
+
+.role-details.visible {
+	max-height: 2000px;
+	overflow: hidden;
+	padding: 1rem;
+}
+
+.role-details h4 {
+	color: var(--primary-color);
+	margin-bottom: 0.8rem;
+}
+
+.role-details ul {
+	list-style: none;
+	margin-bottom: 1rem;
+}
+
+.role-details li {
+	padding: 0.5rem 0;
+	padding-left: 1.5rem;
+	position: relative;
+	color: var(--text-muted);
+}
+
+.role-details li::before {
+	content: '✓';
+	position: absolute;
+	left: 0;
+	color: var(--success-color);
+	font-weight: bold;
+}
+
+.role-note {
+	padding: 1rem;
+	background: var(--surface-muted);
+	border-left: 4px solid var(--warning-color);
+	border-radius: 4px;
+	font-size: 0.9rem;
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+@media (max-width: 768px) {
+	.roles-container {
+		grid-template-columns: 1fr;
+	}
+}

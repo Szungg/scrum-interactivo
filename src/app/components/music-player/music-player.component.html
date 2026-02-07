@@ -1,0 +1,119 @@
+<aside class="music-sidebar" aria-label="Reproductor de musica" [class.is-collapsed]="isCollapsed">
+	<button
+		class="music-sidebar__toggle"
+		type="button"
+		[attr.aria-pressed]="isCollapsed"
+		[attr.aria-label]="isCollapsed ? 'Mostrar sidebar de musica' : 'Ocultar sidebar de musica'"
+		(click)="toggleCollapsed()"
+	>
+		{{ isCollapsed ? '◀' : '▶' }}
+	</button>
+	<div class="music-sidebar__content">
+		<p class="music-sidebar__title">Musica de fondo</p>
+		<div id="reproductor">
+			<div id="music-now" class="music-sidebar__now">{{ currentTrack?.title || 'Sin reproduccion' }}</div>
+			<div class="music-sidebar__art" aria-hidden="true">
+				<img id="music-art" [src]="currentTrack?.image || emptyImage" [alt]="currentTrack?.title ? 'Imagen de ' + currentTrack?.title : 'Sin imagen'">
+			</div>
+			<div class="music-sidebar__controls">
+				<button class="music-sidebar__button" type="button" (click)="prevTrack()">◁◁</button>
+				<button
+					class="music-sidebar__button"
+					type="button"
+					[attr.aria-pressed]="isPlaying"
+					(click)="togglePlay()"
+				>
+					{{ isPlaying ? 'II' : '▶' }}
+				</button>
+				<button class="music-sidebar__button" type="button" (click)="nextTrack()">▷▷</button>
+				<button
+					class="music-sidebar__button"
+					type="button"
+					[attr.aria-pressed]="isMuted"
+					(click)="toggleMute()"
+				>
+					{{ isMuted ? '🔊' : '🔈' }}
+				</button>
+			</div>
+			<div class="music-sidebar__progress">
+				<input
+					type="range"
+					min="0"
+					max="1000"
+					[value]="progressValue"
+					aria-label="Progreso de reproduccion"
+					  (input)="onProgressChange($any($event.target).value)"
+				>
+				<div class="music-sidebar__time">
+					<span>{{ currentTimeLabel }}</span>
+					<span>{{ totalTimeLabel }}</span>
+				</div>
+			</div>
+			<label class="music-sidebar__volume" for="music-volume">
+				<span>Volumen</span>
+				<input
+					id="music-volume"
+					type="range"
+					min="0"
+					max="1"
+					step="0.01"
+					[value]="volumeValue"
+					  (input)="onVolumeChange($any($event.target).value)"
+				>
+			</label>
+		</div>
+		<label class="music-sidebar__search" for="music-search">
+			<span class="music-sidebar__search-head">
+				<span>Buscar</span>
+				<button class="music-sidebar__local-btn" type="button" (click)="musicFiles.click()">Elegir</button>
+			</span>
+			<input #musicFiles class="music-sidebar__local-input" type="file" accept="audio/*" multiple (change)="onPickLocal(musicFiles.files)">
+			<input
+				id="music-search"
+				type="search"
+				placeholder="Filtrar canciones"
+				autocomplete="off"
+				[value]="filterText"
+				(input)="onSearch($any($event.target).value)"
+			>
+		</label>
+		<div id="music-list" class="music-sidebar__list" role="list">
+			<ng-container *ngIf="filteredTracks.length > 0; else emptyList">
+				<div
+					class="music-sidebar__item"
+					role="listitem"
+					*ngFor="let item of filteredTracks; trackBy: trackByIndex"
+					[class.is-active]="item.index === currentIndex"
+				>
+					<button class="music-sidebar__item-button" type="button" (click)="selectTrack(item.index)">
+						{{ item.track.title }}
+					</button>
+					<button
+						class="music-sidebar__delete"
+						type="button"
+						[attr.aria-label]="'Eliminar ' + item.track.title"
+						(click)="deleteTrack(item.index, $event)"
+					>
+						×
+					</button>
+				</div>
+			</ng-container>
+			<ng-template #emptyList>
+				<div class="music-sidebar__item music-sidebar__item--empty">Sin resultados</div>
+			</ng-template>
+		</div>
+		<audio
+			#audioPlayer
+			id="music-player"
+			preload="metadata"
+			(loadedmetadata)="onLoadedMetadata()"
+			(timeupdate)="onTimeUpdate()"
+			(play)="onPlay()"
+			(pause)="onPause()"
+			(volumechange)="onVolumeUpdate()"
+			(ended)="onEnded()"
+		>
+			Tu navegador no soporta el reproductor de audio.
+		</audio>
+	</div>
+</aside>

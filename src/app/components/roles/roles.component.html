@@ -1,0 +1,78 @@
+<section id="roles" class="section">
+	<div class="container">
+		<h2>Roles en Scrum</h2>
+		<div class="roles-container">
+			<div class="role-card" data-role="po" appRevealOnScroll>
+				<div class="role-icon">👔</div>
+				<h3>Product Owner</h3>
+				<p class="role-subtitle">Propietario del Producto</p>
+				<button
+					class="btn-details"
+					type="button"
+					[class.is-open]="isOpen('po')"
+					[attr.aria-expanded]="isOpen('po')"
+					(click)="toggleRole('po')"
+				>
+					{{ isOpen('po') ? 'Ocultar Detalles' : 'Ver Detalles' }}
+				</button>
+				<div class="role-details" [class.visible]="isOpen('po')">
+					<h4>Responsabilidades:</h4>
+					<ul>
+						<li>Gestionar prioridades del producto</li>
+						<li>Representar al cliente</li>
+						<li>Aceptar trabajo completado</li>
+					</ul>
+					<p class="role-note">Es la voz del cliente en el equipo</p>
+				</div>
+			</div>
+
+			<div class="role-card" data-role="sm" appRevealOnScroll>
+				<div class="role-icon">🎯</div>
+				<h3>Scrum Master</h3>
+				<p class="role-subtitle">Facilitador del Equipo</p>
+				<button
+					class="btn-details"
+					type="button"
+					[class.is-open]="isOpen('sm')"
+					[attr.aria-expanded]="isOpen('sm')"
+					(click)="toggleRole('sm')"
+				>
+					{{ isOpen('sm') ? 'Ocultar Detalles' : 'Ver Detalles' }}
+				</button>
+				<div class="role-details" [class.visible]="isOpen('sm')">
+					<h4>Responsabilidades:</h4>
+					<ul>
+						<li>Facilitar reuniones</li>
+						<li>Eliminar obstáculos</li>
+						<li>Promover mejora continua</li>
+					</ul>
+					<p class="role-note">Coach del equipo, no jefe</p>
+				</div>
+			</div>
+
+			<div class="role-card" data-role="dev" appRevealOnScroll>
+				<div class="role-icon">👨‍💻</div>
+				<h3>Equipo de Desarrollo</h3>
+				<p class="role-subtitle">Creadores del Producto</p>
+				<button
+					class="btn-details"
+					type="button"
+					[class.is-open]="isOpen('dev')"
+					[attr.aria-expanded]="isOpen('dev')"
+					(click)="toggleRole('dev')"
+				>
+					{{ isOpen('dev') ? 'Ocultar Detalles' : 'Ver Detalles' }}
+				</button>
+				<div class="role-details" [class.visible]="isOpen('dev')">
+					<h4>Responsabilidades:</h4>
+					<ul>
+						<li>Crear el producto</li>
+						<li>Auto-organizarse</li>
+						<li>Garantizar calidad</li>
+					</ul>
+					<p class="role-note">Equipo de 3-9 personas multidisciplinarias</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
